@@ -8,7 +8,8 @@
     "build": "webpack",
     "lint:js": "eslint src/**.js",
     "lint:html": "htmlhint index.html",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",
