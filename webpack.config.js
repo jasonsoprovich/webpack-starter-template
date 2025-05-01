@@ -1,20 +1,21 @@
-const path = require('path');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   entry: {
-    app: path.resolve(__dirname, 'src/index.js'),
+    app: path.resolve(__dirname, "src/index.js"),
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name][contenthash].bundle.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name][contenthash].bundle.js",
     clean: true,
-    assetModuleFilename: '[name][ext]',
+    assetModuleFilename: "[name][ext]",
   },
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'dist'),
+      directory: path.resolve(__dirname, "dist"),
     },
     port: 3000,
     open: true,
@@ -26,29 +27,29 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.js$/i,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ["@babel/preset-env"],
           },
         },
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
     ],
   },
-    plugins: [
+  plugins: [
     new HtmlWebpackPlugin({
-      title: 'Production',
-      filename: 'index.html',
-      template: 'src/template.html',
+      title: "Production",
+      filename: "index.html",
+      template: "src/template.html",
     }),
   ],
 };

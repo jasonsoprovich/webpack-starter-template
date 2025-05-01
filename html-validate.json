@@ -1,0 +1,6 @@
+{
+  "extends": "html-validate:recommended",
+  "plugins": [
+    "html-validate"
+  ]
+}
