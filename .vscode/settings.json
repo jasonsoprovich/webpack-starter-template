@@ -1,27 +1,24 @@
 {
-  // Format files with Prettier on save
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
 
-  // Auto-fix ESLint issues on save
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.fixAll.eslint": "explicit"
   },
 
-  // Only validate files in your src/ folder
   "eslint.validate": ["javascript", "javascriptreact"],
   "eslint.options": {
     "extensions": [".js", ".jsx"]
   },
-  // Your existing settings…
+
   "emmet.syntaxProfiles": {
     "html": {
       "attr_quotes": "double"
     }
   },
   "emmet.preferences": {
-    // Ensures tag expansions also use double quotes
     "output.attributeQuotes": "double"
-  }
+  },
+  "cSpell.words": ["darr", "uarr"]
 }
